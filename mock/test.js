@@ -1,20 +1,23 @@
 const Mock = require('mockjs')
 
 const data = Mock.mock({
-  'items|30': [{
-    id: '@id',
-    title: '@sentence(10, 20)',
-    'status|1': ['published', 'draft', 'deleted'],
-    author: 'name',
-    display_time: '@datetime',
-    pageviews: '@integer(300, 5000)'
-  }]
-})
+
+  'items':[
+  {
+    tapeId:'12321'
+  },
+  {
+    tapeId:'12333321'
+  },
+  {
+    tapeId:'3333'
+  }
+]})
 
 
 module.exports = [
   {
-    url: '/vue-admin-template/table/list',
+    url: '/vue-admin-template/test/listAlarm',
     type: 'get',
     response: config => {
       const items = data.items
@@ -29,4 +32,3 @@ module.exports = [
   },
 
 ]
-

@@ -5,6 +5,12 @@
     <breadcrumb class="breadcrumb-container" />
 
     <div class="right-menu">
+
+      <template>
+        <message-log class=" right-menu-item" />
+      </template>
+
+
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -35,11 +41,13 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
+import MessageLog from '@/components/MessageLog'
 
 export default {
   components: {
     Breadcrumb,
-    Hamburger
+    Hamburger,
+    MessageLog
   },
   computed: {
     ...mapGetters([
@@ -60,6 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .navbar {
   height: 50px;
   overflow: hidden;
@@ -95,7 +104,7 @@ export default {
 
     .right-menu-item {
       display: inline-block;
-      padding: 0 8px;
+      padding: 0 30px;
       height: 100%;
       font-size: 18px;
       color: #5a5e66;

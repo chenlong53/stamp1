@@ -7,3 +7,13 @@ export function getList(params) {
     params
   })
 }
+
+export function listAlarm(params) {
+  return request({
+    url: '/vue-admin-template/test/listAlarm',
+    method: 'get',
+    params
+  })
+}
+
+

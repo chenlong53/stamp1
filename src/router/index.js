@@ -43,6 +43,9 @@ export const constantRoutes = [
     hidden: true
   },
 
+
+
+
   {
     path: '/',
     component: Layout,
@@ -51,8 +54,34 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
+  },
+
+  {
+    path: '/callPolice',
+    component: Layout,
+    redirect: '/callPolice/telephone',
+    meta: { title: '报警管理', icon: 'nested' },
+    children: [
+      {
+        path: 'telephone',
+        name: 'Telephone',
+        component: () => import('@/views/alarm/alarmList'),
+        meta: { title: '报警电话管理', icon: 'table' }
+      },
+      {
+        path: 'taskList',
+        name: 'TaskList',
+        component: () => import('@/views/alarm/alarmTask'),
+        meta: { title: '任务单管理', icon: 'nested' }
+      },
+      {
+        path: '/taskDetail',
+        component: () => import('@/views/alarm/details/taskDetail'),
+        hidden: true
+      },
+    ]
   },
 
   {
@@ -60,19 +89,19 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    meta: { title: 'Example', icon: 'nested' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: 'Table', icon: 'form' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: 'Tree', icon: 'form' }
       }
     ]
   },
