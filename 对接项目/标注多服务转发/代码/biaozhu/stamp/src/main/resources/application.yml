@@ -1,0 +1,6 @@
+server:
+  port: 8089
+logging:
+  file:
+    #path: F:/logs
+    path: /srv/server/logs
